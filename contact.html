@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>צור קשר | גדי פוליטי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#b5284f;
+    --mint:#c9f1ee;
+    --ink:#1a1a1a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Open Sans', Arial, sans-serif;
+    font-weight:500;
+  }
+  img{max-width:100%; display:block;}
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.8rem 1rem;
+    padding:1.6rem clamp(1.2rem,4vw,3.5rem);
+  }
+  header .logo{flex-shrink:0;}
+  header .logo img{height:67px; width:auto; max-width:none;}
+
+  nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:clamp(1.4rem,3vw,2.6rem);
+    list-style:none;
+    margin-top:25px;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:1.05rem;
+    white-space:nowrap;
+  }
+  nav a:hover{color:var(--accent);}
+
+  @media (max-width:600px){
+    header{
+      flex-direction:column;
+      gap:.8rem;
+    }
+    header .logo{
+      order:1;
+      margin-right:auto;
+    }
+    header nav{
+      order:2;
+      align-self:center;
+    }
+    nav ul{margin-top:0;}
+  }
+
+  .about{
+    padding:clamp(2rem,6vw,3rem) clamp(1.2rem,4vw,3.5rem) clamp(2rem,5vw,3.5rem);
+  }
+  .about-text{
+    min-width:280px;
+  }
+  .about-photo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:1.6rem;
+  }
+  .about-photo img{
+    width:138px;
+    height:auto;
+  }
+  .about-text h1{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:500;
+    color:var(--accent);
+    text-align:center;
+    margin-bottom:1.6rem;
+  }
+  .about-text .contact-line{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:.3rem;
+    font-size:2rem;
+    margin-top:.4rem;
+  }
+  .about-text .contact-line .sep{
+    display:none;
+  }
+  .about-text .contact-line a{
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .whatsapp{
+    display:flex;
+    width:fit-content;
+    margin:1rem auto 0;
+  }
+  .whatsapp svg{
+    width:60px;
+    height:60px;
+  }
+  .about-text .contact-line a:hover{
+    color:var(--accent);
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="works.html">עבודות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="about-photo">
+      <img src="Gadi_Profile_Pic_BW.png" alt="גדי פוליטי">
+    </div>
+    <div class="about-text">
+      <h1>צור קשר</h1>
+      <p class="contact-line"><span>גדי פוליטי</span><span class="sep"> | </span><span>טל: <a href="tel:0546690380">054-6690380</a></span><span class="sep"> | </span><span><a href="mailto:gadipol@gmail.com">gadipol@gmail.com</a></span></p>
+      <a class="whatsapp" href="https://wa.me/972546690380" target="_blank" rel="noopener" aria-label="שליחת הודעת ווטסאפ">
+        <svg viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.41-1.42a9.87 9.87 0 0 0 4.63 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

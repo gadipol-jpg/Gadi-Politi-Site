@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אודות | גדי פוליטי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#b5284f;
+    --mint:#c9f1ee;
+    --ink:#1a1a1a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Open Sans', Arial, sans-serif;
+    font-weight:500;
+  }
+  img{max-width:100%; display:block;}
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.8rem 1rem;
+    padding:1.6rem clamp(1.2rem,4vw,3.5rem);
+  }
+  header .logo{flex-shrink:0;}
+  header .logo img{height:67px; width:auto; max-width:none;}
+
+  nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:clamp(1.4rem,3vw,2.6rem);
+    list-style:none;
+    margin-top:25px;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:1.05rem;
+    white-space:nowrap;
+  }
+  nav a:hover{color:var(--accent);}
+
+  @media (max-width:600px){
+    header{
+      flex-direction:column;
+      gap:.8rem;
+    }
+    header .logo{
+      order:1;
+      margin-right:auto;
+    }
+    header nav{
+      order:2;
+      align-self:center;
+    }
+    nav ul{margin-top:0;}
+  }
+
+  .about{
+    padding:clamp(2rem,6vw,3rem) clamp(1.2rem,4vw,3.5rem) clamp(2rem,5vw,3.5rem);
+  }
+  .about-text{
+    min-width:280px;
+  }
+  .about-photo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:1.6rem;
+  }
+  .about-photo img{
+    width:138px;
+    height:auto;
+  }
+  .about-text h1{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:500;
+    color:var(--accent);
+    text-align:center;
+    margin-bottom:1.6rem;
+  }
+  .about-text h1 .desktop-break{
+    display:none;
+  }
+  @media (min-width:601px){
+    .about-text h1 .desktop-break{
+      display:inline;
+    }
+  }
+  .about-text .tagline{
+    color:var(--accent);
+    font-size:clamp(1.1rem,2vw,1.35rem);
+    margin-bottom:1.6rem;
+  }
+  .about-text p{
+    font-size:1.02rem;
+    line-height:1.8;
+    margin-bottom:1.2rem;
+  }
+  .credit{
+    text-align:right;
+    padding:0 clamp(1.2rem,4vw,3.5rem) clamp(3rem,6vw,4rem);
+    font-size:.9rem;
+    color:#666;
+  }
+  .about-text .contact-line{
+    font-size:1rem;
+    margin-top:.4rem;
+  }
+  .about-text .contact-line a{
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .about-text .contact-line a:hover{
+    color:var(--accent);
+  }
+
+  .clients-title{
+    text-align:right;
+    padding:0 clamp(1.2rem,4vw,3.5rem);
+    color:var(--accent);
+    font-size:clamp(1.3rem,2.6vw,1.8rem);
+    margin-bottom:1.6rem;
+  }
+  .clients{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-items:center;
+    gap:1.4rem 2rem;
+    padding:0 clamp(1.2rem,4vw,3.5rem) clamp(3rem,6vw,4rem);
+  }
+  .clients img{
+    height:50px;
+    width:auto;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="works.html">עבודות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="about-photo">
+      <img src="Gadi_Profile_Pic_BW.png" alt="גדי פוליטי">
+    </div>
+    <div class="about-text">
+      <h1>גם לקוחות קטנים ובינוניים <br class="desktop-break">יכולים ליהנות מסטנדרט גבוה</h1>
+
+      <p>היי, שמי גדי פוליטי, אני איש קריאייטיב העוסק במגוון תחומים, אותם אני רואה כמכלול המשלים את עצמו. מגיל צעיר מאוד אני מצייר ומאייר קריקטורות, קומיקס ואיורים מורכבים. בגיל 22 התחלתי ללמוד במכללת ויצ"ו קנדה ע"ש נרי בלומפילד, בחיפה, שם הייתי סטודנט במחלקה לעיצוב גרפי, וקיבלתי הכשרה מטובי המורים והמרצים בענף העיצוב, הצילום, האיור והפרסום. במקביל למדתי במסלול הכשרת מורים מטעם משרד החינוך וקיבלתי בנוסף תעודת מורה למקצועות העיצוב.</p>
+
+      <p>מייד לאחר הלימודים התחלתי לעבוד בענף הפרסום כארט דירקטור במשך 10 שנים, כאשר אני משלב גם את כשרוני בתחום הקופירייטינג, במשרדים: דחף אחד, ראובני פרידן, איי בי דאטה, ערמוני מורדי אוחיון וטמיר כהן. יצאתי לעצמאות ופתחתי את משרד גדי פוליטי ומלווה לקוחות קטנים ובינוניים בכל מה שקשור לפתרונות קריאייטיב ומעניק שירותי עיצוב גרפי, פרסום, מיתוג וקופירייטינג, תוך כדי שירות פרילנס במשרדי הפרסום הגדולים.</p>
+
+      <p>לקוחותי נהנים מטיפול צמוד, מניסיוני רב השנים במשרדי הפרסום הגדולים, וממחירים זולים מהמחירים הרווחים בענף הפרסום והעיצוב. באופן כזה, גם לקוחות קטנים ובינוניים, המבקשים לצמוח ולתת פייט לגדולים מהם, יכולים ליהנות מפתרונות שיכולים להזניק אותם קדימה.</p>
+
+      <p>אשמח לעמוד לרשותכם, ולהביא את פתרונות הקריאייטיב שלי אליכם, למענכם ולמען הצלחתכם.</p>
+
+      <p class="contact-line">גדי פוליטי | טל: 054-6690380 | <a href="mailto:gadipol@gmail.com">gadipol@gmail.com</a></p>
+    </div>
+  </section>
+
+  <h2 class="clients-title">בין לקוחותי:</h2>
+  <section class="clients">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_1.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_2.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_3.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_4.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_5.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_6.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_7.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_8.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_9.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_10.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_11.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_12.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_13.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_14.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_15.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_16.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_17.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_18.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_19.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_20.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_21.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_22.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_23.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_24.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_25.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_26.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_27.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_28.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_29.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_30.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_31.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_32.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_33.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_34.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_35.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_36.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_37.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_38.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_39.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_40.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_41.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_42.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_43.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_44.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_45.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_46.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_47.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_48.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_49.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_50.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_51.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_52.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_53.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_54.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_55.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_56.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_57.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_58.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_59.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_60.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_61.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_62.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_63.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_64.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_65.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_66.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_67.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_68.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_69.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_70.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_71.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_72.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_73.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_74.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_75.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_76.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_77.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_78.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_79.jpg" alt="לוגו לקוח">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_80.jpg" alt="לוגו לקוח">
+  </section>
+
+  <p class="credit">צילום פורטרט: ראובן קופיצ'ינסקי</p>
+
+</body>
+</html>

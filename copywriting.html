@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קופירייטינג | גדי פוליטי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#b5284f;
+    --mint:#c9f1ee;
+    --ink:#1a1a1a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Open Sans', Arial, sans-serif;
+    font-weight:500;
+  }
+  img{max-width:100%; display:block;}
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.8rem 1rem;
+    padding:1.6rem clamp(1.2rem,4vw,3.5rem);
+  }
+  header .logo{flex-shrink:0;}
+  header .logo img{height:67px; width:auto; max-width:none;}
+
+  nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:clamp(1.4rem,3vw,2.6rem);
+    list-style:none;
+    margin-top:25px;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:1.05rem;
+    white-space:nowrap;
+  }
+  nav a:hover{color:var(--accent);}
+
+  @media (max-width:600px){
+    header{
+      flex-direction:column;
+      gap:.8rem;
+    }
+    header .logo{
+      order:1;
+      margin-right:auto;
+    }
+    header nav{
+      order:2;
+      align-self:center;
+    }
+    nav ul{margin-top:0;}
+  }
+
+  .category{
+    padding:clamp(2rem,6vw,3rem) clamp(1.2rem,4vw,3.5rem) clamp(4rem,10vw,6rem);
+  }
+  .category h1{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    color:var(--accent);
+    font-weight:500;
+    text-align:right;
+    margin-bottom:1.4rem;
+  }
+  .hero-item{
+    width:100%;
+    box-shadow:26px 26px 46px rgba(0,0,0,.3);
+  }
+  .more{
+    width:100%;
+    margin:2.5rem 0 0;
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+  }
+  .more-item{
+    box-shadow:26px 26px 46px rgba(0,0,0,.3);
+  }
+
+  .arrow-panel{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1.2rem;
+  }
+  .arrow-panel.top{
+    padding:0 clamp(1.2rem,4vw,3.5rem) 1.2rem;
+  }
+  .arrow-panel.bottom{
+    margin-top:3rem;
+  }
+  .arrow-btn{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1.5px solid var(--accent);
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  .arrow-btn:hover{
+    background:var(--accent);
+    color:#fff;
+  }
+  .arrow-panel.bottom{
+    position:fixed;
+    bottom:1.5rem;
+    left:50%;
+    transform:translateX(-50%);
+    margin-top:0;
+    background:rgba(255,255,255,.92);
+    padding:.6rem 1.1rem;
+    border-radius:999px;
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    z-index:100;
+  }
+</style>
+</head>
+<body>
+
+  <header id="top">
+    <nav>
+      <ul>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="works.html">עבודות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+    </div>
+  </header>
+
+  <div class="arrow-panel top">
+    <a class="arrow-btn" href="advertising.html" aria-label="עבודה קודמת"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
+    <a class="arrow-btn" href="branding.html" aria-label="עבודה הבאה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
+  </div>
+
+  <section class="category">
+    <h1>קופירייטינג</h1>
+    <div class="hero-item"><img src="Copy_02.jpg" alt="קופירייטינג"></div>
+    <div class="more">
+      <div class="more-item"><img src="Copy_03.jpg" alt="קופירייטינג"></div>
+      <div class="more-item"><img src="Copy_04.jpg" alt="קופירייטינג"></div>
+      <div class="more-item"><img src="Copy_05.jpg" alt="קופירייטינג"></div>
+    </div>
+  <div class="arrow-panel bottom">
+    <a class="arrow-btn" href="advertising.html" aria-label="עבודה קודמת"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
+    <a class="arrow-btn" href="#top" aria-label="חזרה לראש העמוד"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 14 12 8 18 14"/><line x1="12" y1="12" x2="12" y2="19"/></svg></a>
+    <a class="arrow-btn" href="branding.html" aria-label="עבודה הבאה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
+  </div>
+  </section>
+
+</body>
+</html>
