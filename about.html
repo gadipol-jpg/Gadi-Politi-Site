@@ -20,7 +20,7 @@
     font-family:'Open Sans', Arial, sans-serif;
     font-weight:500;
   }
-  img{max-width:100%; display:block;}
+  img{max-width:100%; height:auto; display:block;}
 
   header{
     display:flex;
@@ -141,22 +141,69 @@
     height:50px;
     width:auto;
   }
+
+  /* ===== התאמות נגישות (ת"י 5568 / WCAG 2.0 AA) ===== */
+  .skip-link{
+    position:absolute;
+    right:-9999px;
+    top:0;
+    z-index:100;
+    background:var(--accent);
+    color:#fff;
+    padding:.85rem 1.4rem;
+    font-size:1rem;
+    text-decoration:none;
+    border-radius:0 0 8px 8px;
+  }
+  .skip-link:focus{right:1rem;}
+
+  :focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px;
+    margin:-1px; padding:0;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+    border:0;
+  }
+  .site-footer{
+    text-align:center;
+    padding:2rem 1.2rem clamp(2rem,5vw,3rem);
+    border-top:1px solid #e5e5e5;
+    margin-top:2rem;
+  }
+  .site-footer a{
+    color:var(--ink);
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .site-footer a:hover{color:var(--accent);}
 </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
   <header>
-    <nav>
+    <nav aria-label="ניווט ראשי">
       <ul>
-        <li><a href="about.html">אודות</a></li>
+        <li><a href="about.html" aria-current="page">אודות</a></li>
         <li><a href="works.html">עבודות</a></li>
         <li><a href="contact.html">צור קשר</a></li>
       </ul>
     </nav>
     <div class="logo">
-      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי — חזרה לדף הבית"></a>
     </div>
   </header>
+
+  <main id="main">
 
   <section class="about">
     <div class="about-photo">
@@ -173,95 +220,100 @@
 
       <p>אשמח לעמוד לרשותכם, ולהביא את פתרונות הקריאייטיב שלי אליכם, למענכם ולמען הצלחתכם.</p>
 
-      <p class="contact-line">גדי פוליטי | טל: 054-6690380 | <a href="mailto:gadipol@gmail.com">gadipol@gmail.com</a></p>
+      <p class="contact-line">גדי פוליטי | טל: <a href="tel:+972546690380">054-6690380</a> | <a href="mailto:gadipol@gmail.com">gadipol@gmail.com</a></p>
     </div>
   </section>
 
-  <h2 class="clients-title">בין לקוחותי:</h2>
-  <section class="clients">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_1.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_2.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_3.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_4.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_5.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_6.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_7.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_8.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_9.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_10.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_11.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_12.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_13.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_14.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_15.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_16.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_17.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_18.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_19.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_20.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_21.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_22.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_23.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_24.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_25.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_26.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_27.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_28.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_29.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_30.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_31.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_32.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_33.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_34.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_35.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_36.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_37.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_38.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_39.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_40.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_41.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_42.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_43.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_44.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_45.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_46.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_47.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_48.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_49.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_50.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_51.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_52.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_53.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_54.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_55.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_56.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_57.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_58.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_59.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_60.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_61.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_62.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_63.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_64.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_65.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_66.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_67.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_68.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_69.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_70.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_71.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_72.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_73.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_74.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_75.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_76.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_77.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_78.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_79.jpg" alt="לוגו לקוח">
-      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_80.jpg" alt="לוגו לקוח">
+  <h2 class="clients-title" id="clients-title">בין לקוחותי:</h2>
+  <section class="clients" aria-labelledby="clients-title">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_1.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_2.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_3.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_4.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_5.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_6.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_7.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_8.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_9.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_10.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_11.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_12.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_13.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_14.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_15.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_16.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_17.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_18.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_19.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_20.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_21.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_22.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_23.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_24.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_25.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_26.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_27.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_28.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_29.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_30.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_31.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_32.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_33.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_34.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_35.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_36.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_37.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_38.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_39.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_40.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_41.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_42.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_43.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_44.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_45.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_46.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_47.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_48.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_49.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_50.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_51.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_52.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_53.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_54.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_55.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_56.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_57.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_58.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_59.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_60.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_61.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_62.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_63.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_64.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_65.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_66.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_67.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_68.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_69.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_70.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_71.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_72.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_73.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_74.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_75.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_76.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_77.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_78.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_79.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
+      <img src="Politi_logos_bw/GP_Website_Clients_Logos_bw_80.jpg" alt="" width="116" height="82" loading="lazy" decoding="async">
   </section>
 
   <p class="credit">צילום פורטרט: ראובן קופיצ'ינסקי</p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="accessibility.html">הצהרת נגישות</a>
+  </footer>
 
 </body>
 </html>

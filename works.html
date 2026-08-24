@@ -20,7 +20,7 @@
     font-family:'Open Sans', Arial, sans-serif;
     font-weight:500;
   }
-  img{max-width:100%; display:block;}
+  img{max-width:100%; height:auto; display:block;}
 
   header{
     display:flex;
@@ -90,45 +90,99 @@
   .work-item .frame{
     box-shadow:14px 14px 26px rgba(0,0,0,.3);
   }
+
+  /* ===== התאמות נגישות (ת"י 5568 / WCAG 2.0 AA) ===== */
+  .skip-link{
+    position:absolute;
+    right:-9999px;
+    top:0;
+    z-index:100;
+    background:var(--accent);
+    color:#fff;
+    padding:.85rem 1.4rem;
+    font-size:1rem;
+    text-decoration:none;
+    border-radius:0 0 8px 8px;
+  }
+  .skip-link:focus{right:1rem;}
+
+  :focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px;
+    margin:-1px; padding:0;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+    border:0;
+  }
+  .site-footer{
+    text-align:center;
+    padding:2rem 1.2rem clamp(2rem,5vw,3rem);
+    border-top:1px solid #e5e5e5;
+    margin-top:2rem;
+  }
+  .site-footer a{
+    color:var(--ink);
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .site-footer a:hover{color:var(--accent);}
 </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
   <header>
-    <nav>
+    <nav aria-label="ניווט ראשי">
       <ul>
         <li><a href="about.html">אודות</a></li>
-        <li><a href="works.html">עבודות</a></li>
+        <li><a href="works.html" aria-current="page">עבודות</a></li>
         <li><a href="contact.html">צור קשר</a></li>
       </ul>
     </nav>
     <div class="logo">
-      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי — חזרה לדף הבית"></a>
     </div>
   </header>
+
+  <main id="main">
+
+  <h1 class="visually-hidden">עבודות</h1>
 
   <section class="works">
     <a class="work-item" href="advertising.html">
       <h2>פרסום</h2>
-      <div class="frame"><img src="Adv_01.jpg" alt="פרסום"></div>
+      <div class="frame"><img src="Adv_01.jpg" alt="מודעת אלקטרה: הר מושלג שראשו חשוף, ולצדו מקרר עם הכיתוב ״משיקים את המקרר בעל המקפיא התחתון של אלקטרה״" width="1500" height="1150"></div>
     </a>
     <a class="work-item" href="copywriting.html">
       <h2>קופירייטינג</h2>
-      <div class="frame"><img src="Copy_01.jpg" alt="קופירייטינג"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="Copy_01.jpg" alt="מודעת ״יותר ממחשבון״: הכותרת הגדולה ״שו? מה?!״ מעל טקסט על עריכת שומה ומיסוי מקרקעין" width="1500" height="1150"></div>
     </a>
     <a class="work-item" href="branding.html">
       <h2>מיתוג</h2>
-      <div class="frame"><img src="Branding_01.jpg" alt="מיתוג"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="Branding_01.jpg" alt="דוגמת עיטוף למותג הסושי ISHIMAKI: חזרות של הלוגו, פרצוף מסוגנן ומקלות אכילה בשחור, ורוד וירוק" width="1500" height="1150"></div>
     </a>
     <a class="work-item" href="digital.html">
       <h2>דיגיטל</h2>
-      <div class="frame"><img src="Digital_01.png" alt="דיגיטל"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="Digital_01.jpg" alt="סדרת באנרים לאירועי יין של יקב Jaffa, ובהם צילומי כוסות יין, חבית וקורקים" width="1500" height="1150"></div>
     </a>
     <a class="work-item" href="graphic-design.html">
       <h2>עיצוב גרפי</h2>
-      <div class="frame"><img src="Design_01.jpg" alt="עיצוב גרפי"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="Design_01.jpg" alt="קמפיין לעיריית הרצליה: משאית אשפה עטופה במדבקת ״כשהרחובות מצטחצחים העיר פורחת!״ ולצדה שני שלטים נוספים מהסדרה" width="1500" height="1150"></div>
     </a>
   </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="accessibility.html">הצהרת נגישות</a>
+  </footer>
 
 </body>
 </html>

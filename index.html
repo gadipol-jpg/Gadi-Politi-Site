@@ -20,7 +20,7 @@
     font-family:'Open Sans', Arial, sans-serif;
     font-weight:500;
   }
-  img{max-width:100%; display:block;}
+  img{max-width:100%; height:auto; display:block;}
 
   header{
     display:flex;
@@ -93,6 +93,26 @@
     transition:opacity .7s ease;
   }
   .caption.active{opacity:1; pointer-events:auto;}
+
+  /* כפתור עצירת המצגת — נדרש לפי WCAG 2.2.2 */
+  .slide-toggle{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    width:fit-content;
+    margin-top:1.1rem;
+    min-height:44px;
+    padding:.5rem 1.2rem;
+    font:inherit;
+    font-size:1rem;
+    color:var(--ink);
+    background:#fff;
+    border:2px solid var(--ink);
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease;
+  }
+  .slide-toggle:hover{background:var(--ink); color:#fff;}
   .caption a{
     color:var(--accent);
     text-decoration:none;
@@ -110,12 +130,57 @@
     opacity:1;
     transition:opacity .5s ease;
   }
+
+  /* ===== התאמות נגישות (ת"י 5568 / WCAG 2.0 AA) ===== */
+  .skip-link{
+    position:absolute;
+    right:-9999px;
+    top:0;
+    z-index:100;
+    background:var(--accent);
+    color:#fff;
+    padding:.85rem 1.4rem;
+    font-size:1rem;
+    text-decoration:none;
+    border-radius:0 0 8px 8px;
+  }
+  .skip-link:focus{right:1rem;}
+
+  :focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px;
+    margin:-1px; padding:0;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+    border:0;
+  }
+  .site-footer{
+    text-align:center;
+    padding:2rem 1.2rem clamp(2rem,5vw,3rem);
+    border-top:1px solid #e5e5e5;
+    margin-top:2rem;
+  }
+  .site-footer a{
+    color:var(--ink);
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .site-footer a:hover{color:var(--accent);}
 </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
   <header>
-    <nav>
+    <nav aria-label="ניווט ראשי">
       <ul>
         <li><a href="about.html">אודות</a></li>
         <li><a href="works.html">עבודות</a></li>
@@ -123,56 +188,124 @@
       </ul>
     </nav>
     <div class="logo">
-      <img src="Gadi_Politi_Logo.png" alt="גדי פוליטי">
+      <img src="Gadi_Politi_Logo.png" alt="גדי פוליטי — חזרה לדף הבית">
     </div>
   </header>
 
+  <main id="main">
+
+  <h1 class="visually-hidden">גדי פוליטי — עיצוב גרפי, פרסום, קופירייטינג, מיתוג ודיגיטל</h1>
+
   <section class="hero">
-    <div class="slideshow-wrap">
+    <div class="slideshow-wrap" role="group" aria-roledescription="מצגת" aria-label="עבודות נבחרות">
       <div class="caption-stack">
         <span class="caption active"><a href="graphic-design.html">עיצוב גרפי</a></span>
-        <span class="caption"><a href="advertising.html">פרסום</a></span>
-        <span class="caption"><a href="copywriting.html">קופירייטינג</a></span>
-        <span class="caption"><a href="branding.html">מיתוג</a></span>
-        <span class="caption"><a href="digital.html">דיגיטל</a></span>
+        <span class="caption" aria-hidden="true"><a href="advertising.html" tabindex="-1">פרסום</a></span>
+        <span class="caption" aria-hidden="true"><a href="copywriting.html" tabindex="-1">קופירייטינג</a></span>
+        <span class="caption" aria-hidden="true"><a href="branding.html" tabindex="-1">מיתוג</a></span>
+        <span class="caption" aria-hidden="true"><a href="digital.html" tabindex="-1">דיגיטל</a></span>
       </div>
       <div class="slideshow">
-        <a id="slideLink" href="graphic-design.html"><img id="slideImg" src="Design_01.jpg" alt="עיצוב גרפי"></a>
+        <a id="slideLink" href="graphic-design.html"><img id="slideImg" src="Design_01.jpg" alt="קמפיין לעיריית הרצליה: משאית אשפה עטופה במדבקת ״כשהרחובות מצטחצחים העיר פורחת!״ ולצדה שני שלטים נוספים מהסדרה" width="1500" height="1150"></a>
       </div>
+      <button type="button" id="slideToggle" class="slide-toggle" aria-pressed="false">
+        <span class="slide-toggle-icon" aria-hidden="true">❚❚</span>
+        <span id="slideToggleText">עצירת המצגת</span>
+      </button>
     </div>
   </section>
 
   <script>
-    const images = [
-      'Design_01.jpg',
-      'Adv_01.jpg',
-      'Copy_01.jpg',
-      'Branding_01.jpg',
-      'Digital_01.png'
+    const slides = [
+      {img:'Design_01.jpg',   link:'graphic-design.html', alt:'קמפיין לעיריית הרצליה: משאית אשפה עטופה במדבקת ״כשהרחובות מצטחצחים העיר פורחת!״ ולצדה שני שלטים נוספים מהסדרה'},
+      {img:'Adv_01.jpg',      link:'advertising.html',    alt:'מודעת אלקטרה: הר מושלג שראשו חשוף, ולצדו מקרר עם הכיתוב ״משיקים את המקרר בעל המקפיא התחתון של אלקטרה״'},
+      {img:'Copy_01.jpg',     link:'copywriting.html',    alt:'מודעת ״יותר ממחשבון״: הכותרת הגדולה ״שו? מה?!״ מעל טקסט על עריכת שומה ומיסוי מקרקעין'},
+      {img:'Branding_01.jpg', link:'branding.html',       alt:'דוגמת עיטוף למותג הסושי ISHIMAKI: חזרות של הלוגו, פרצוף מסוגנן ומקלות אכילה בשחור, ורוד וירוק'},
+      {img:'Digital_01.jpg',  link:'digital.html',        alt:'סדרת באנרים לאירועי יין של יקב Jaffa, ובהם צילומי כוסות יין, חבית וקורקים'}
     ];
-    const links = [
-      'graphic-design.html',
-      'advertising.html',
-      'copywriting.html',
-      'branding.html',
-      'digital.html'
-    ];
-    const slideImg = document.getElementById('slideImg');
-    const slideLink = document.getElementById('slideLink');
-    const captions = document.querySelectorAll('.caption');
+
+    const INTERVAL = 3500;
+    const slideImg    = document.getElementById('slideImg');
+    const slideLink   = document.getElementById('slideLink');
+    const captions    = document.querySelectorAll('.caption');
+    const toggleBtn   = document.getElementById('slideToggle');
+    const toggleText  = document.getElementById('slideToggleText');
+    const toggleIcon  = toggleBtn.querySelector('.slide-toggle-icon');
+    const wrap        = document.querySelector('.slideshow-wrap');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     let current = 0;
-    setInterval(() => {
+    let timer = null;
+    let paused = false;
+
+    // רק הכיתובית הפעילה נגישה למקלדת ולקוראי מסך.
+    // הסתמכות על visibility ב-CSS אינה אמינה כאן: המעבר בן 0.7 שניות
+    // משאיר את הכיתובית היוצאת נגישה ל-Tab לאורך המעבר.
+    function syncCaptions(){
+      captions.forEach(function(cap){
+        const link = cap.querySelector('a');
+        if(cap.classList.contains('active')){
+          cap.removeAttribute('aria-hidden');
+          link.removeAttribute('tabindex');
+        } else {
+          cap.setAttribute('aria-hidden','true');
+          link.setAttribute('tabindex','-1');
+        }
+      });
+    }
+
+    function showSlide(index){
+      const nextIndex = (index + slides.length) % slides.length;
       slideImg.style.opacity = 0;
-      setTimeout(() => {
+      setTimeout(function(){
         captions[current].classList.remove('active');
-        current = (current + 1) % images.length;
-        slideImg.src = images[current];
-        slideLink.href = links[current];
+        current = nextIndex;
+        const slide = slides[current];
+        slideImg.src = slide.img;
+        slideImg.alt = slide.alt;      // הטקסט החלופי מתעדכן יחד עם התמונה
+        slideLink.href = slide.link;
         captions[current].classList.add('active');
+        syncCaptions();
         slideImg.style.opacity = 1;
       }, 500);
-    }, 3500);
+    }
+
+    function runTimer(){ if(!timer) timer = setInterval(function(){ showSlide(current + 1); }, INTERVAL); }
+    function haltTimer(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    function play(){
+      paused = false;
+      runTimer();
+      toggleBtn.setAttribute('aria-pressed','false');
+      toggleText.textContent = 'עצירת המצגת';
+      toggleIcon.textContent = '❚❚';
+    }
+
+    function pause(){
+      paused = true;
+      haltTimer();
+      toggleBtn.setAttribute('aria-pressed','true');
+      toggleText.textContent = 'הפעלת המצגת';
+      toggleIcon.textContent = '▶';
+    }
+
+    toggleBtn.addEventListener('click', function(){ paused ? play() : pause(); });
+
+    // עצירה זמנית כל עוד העכבר מעל המצגת או שהמיקוד נמצא בתוכה
+    wrap.addEventListener('mouseenter', function(){ if(!paused) haltTimer(); });
+    wrap.addEventListener('mouseleave', function(){ if(!paused) runTimer(); });
+    wrap.addEventListener('focusin',    function(){ if(!paused) haltTimer(); });
+    wrap.addEventListener('focusout',   function(){ if(!paused) runTimer(); });
+
+    // מי שביקש תנועה מופחתת במערכת ההפעלה מקבל מצגת עצורה מלכתחילה
+    syncCaptions();
+    if(reduceMotion){ pause(); } else { play(); }
   </script>
+  </main>
+
+  <footer class="site-footer">
+    <a href="accessibility.html">הצהרת נגישות</a>
+  </footer>
 
 </body>
 </html>

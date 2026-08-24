@@ -20,7 +20,7 @@
     font-family:'Open Sans', Arial, sans-serif;
     font-weight:500;
   }
-  img{max-width:100%; display:block;}
+  img{max-width:100%; height:auto; display:block;}
 
   header{
     display:flex;
@@ -129,12 +129,57 @@
     box-shadow:0 8px 24px rgba(0,0,0,.18);
     z-index:100;
   }
+
+  /* ===== התאמות נגישות (ת"י 5568 / WCAG 2.0 AA) ===== */
+  .skip-link{
+    position:absolute;
+    right:-9999px;
+    top:0;
+    z-index:100;
+    background:var(--accent);
+    color:#fff;
+    padding:.85rem 1.4rem;
+    font-size:1rem;
+    text-decoration:none;
+    border-radius:0 0 8px 8px;
+  }
+  .skip-link:focus{right:1rem;}
+
+  :focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px;
+    margin:-1px; padding:0;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+    border:0;
+  }
+  .site-footer{
+    text-align:center;
+    padding:2rem 1.2rem clamp(2rem,5vw,3rem);
+    border-top:1px solid #e5e5e5;
+    margin-top:2rem;
+  }
+  .site-footer a{
+    color:var(--ink);
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .site-footer a:hover{color:var(--accent);}
 </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
   <header id="top">
-    <nav>
+    <nav aria-label="ניווט ראשי">
       <ul>
         <li><a href="about.html">אודות</a></li>
         <li><a href="works.html">עבודות</a></li>
@@ -142,29 +187,36 @@
       </ul>
     </nav>
     <div class="logo">
-      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי"></a>
+      <a href="index.html"><img src="Gadi_Politi_Logo.png" alt="גדי פוליטי — חזרה לדף הבית"></a>
     </div>
   </header>
 
+  <main id="main">
+
   <div class="arrow-panel top">
-    <a class="arrow-btn" href="copywriting.html" aria-label="עבודה קודמת"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
-    <a class="arrow-btn" href="digital.html" aria-label="עבודה הבאה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
+    <a class="arrow-btn" href="copywriting.html" aria-label="לקטגוריה הקודמת: קופירייטינג"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
+    <a class="arrow-btn" href="digital.html" aria-label="לקטגוריה הבאה: דיגיטל"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
   </div>
 
   <section class="category">
     <h1>מיתוג</h1>
-    <div class="hero-item"><img src="Branding_02.jpg" alt="מיתוג"></div>
+    <div class="hero-item"><img src="Branding_02.jpg" alt="ניירת מותג לדבי תקשורת: לוגו, כרטיס ביקור, מעטפה, תקליטור וחוברת ספירלה בגוני כחול" width="1500" height="1150"></div>
     <div class="more">
-      <div class="more-item"><img src="Branding_03.jpg" alt="מיתוג"></div>
-      <div class="more-item"><img src="Branding_04.jpg" alt="מיתוג"></div>
-      <div class="more-item"><img src="Branding_05.jpg" alt="מיתוג"></div>
+      <div class="more-item"><img loading="lazy" decoding="async" src="Branding_03.jpg" alt="לוגו ״בתים ומבטים״, יריד השיפוץ הבנייה ועיצוב הבית: שני בתים שחלונותיהם עיניים" width="1500" height="1150"></div>
+      <div class="more-item"><img loading="lazy" decoding="async" src="Branding_04.jpg" alt="מוצרי מותג Cliff: שקית בד, כפפות, פנס ראש, שק שינה Sunrise ופוסטר מטפס הרים" width="1500" height="1150"></div>
+      <div class="more-item"><img loading="lazy" decoding="async" src="Branding_05.jpg" alt="מיתוג ISHIMAKI: לוגו, חולצות צוות, מפיות ומקלות אכילה ממותגים על רקע ורוד" width="1500" height="1150"></div>
     </div>
   <div class="arrow-panel bottom">
-    <a class="arrow-btn" href="copywriting.html" aria-label="עבודה קודמת"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
+    <a class="arrow-btn" href="copywriting.html" aria-label="לקטגוריה הקודמת: קופירייטינג"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
     <a class="arrow-btn" href="#top" aria-label="חזרה לראש העמוד"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 14 12 8 18 14"/><line x1="12" y1="12" x2="12" y2="19"/></svg></a>
-    <a class="arrow-btn" href="digital.html" aria-label="עבודה הבאה"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
+    <a class="arrow-btn" href="digital.html" aria-label="לקטגוריה הבאה: דיגיטל"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/><line x1="12" y1="12" x2="19" y2="12"/></svg></a>
   </div>
   </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="accessibility.html">הצהרת נגישות</a>
+  </footer>
 
 </body>
 </html>
