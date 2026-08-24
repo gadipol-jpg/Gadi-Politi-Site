@@ -81,11 +81,17 @@
   .more{
     width:100%;
     margin:2.5rem 0 0;
-    display:flex;
-    flex-direction:column;
-    gap:2rem;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.4rem;
+  }
+  @media (min-width:700px){
+    .more{
+      grid-template-columns:repeat(2,1fr);
+    }
   }
   .more-item{
+    min-width:0;
     box-shadow:26px 26px 46px rgba(0,0,0,.3);
   }
 
