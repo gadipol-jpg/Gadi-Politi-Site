@@ -74,9 +74,22 @@
     text-align:right;
     margin-bottom:1.4rem;
   }
+  .videos{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:3rem 2rem;
+    margin-top:2.5rem;
+    justify-items:center;
+    align-items:start;
+  }
+  @media (min-width:900px){
+    .videos{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
   .video-item{
     width:min(420px,100%,calc(80vh * 9 / 16));
-    margin:2.5rem auto 0;
+    min-width:0;
   }
   .video-item video{
     display:block;
@@ -202,12 +215,21 @@
 
   <section class="category">
     <h1>סרטונים ב-AI</h1>
-    <div class="video-item">
-      <video controls playsinline preload="metadata" poster="Videos/Isrotel_JingleBells_poster.jpg" width="1080" height="1920" aria-describedby="video1-desc">
-        <source src="Videos/Isrotel_JingleBells_Reels_9x16_v7_20s.mp4" type="video/mp4">
-        הדפדפן שלך אינו תומך בניגון וידאו.
-      </video>
-      <p class="video-caption" id="video1-desc">ישרוטל - Jingle Bells: סרטון אנכי (9:16) באורך 20 שניות. הסרטון נפתח בכותרת Jingle Bells מעל שבעה פעמוני קבלה של מלון.</p>
+    <div class="videos">
+      <div class="video-item">
+        <video controls playsinline preload="metadata" poster="Videos/Isrotel_JingleBells_poster.jpg" width="1080" height="1920" aria-describedby="video1-desc">
+          <source src="Videos/Isrotel_JingleBells_Reels_9x16_v7_20s.mp4" type="video/mp4">
+          הדפדפן שלך אינו תומך בניגון וידאו.
+        </video>
+        <p class="video-caption" id="video1-desc">ישרוטל - Jingle Bells: סרטון אנכי (9:16) באורך 20 שניות. הסרטון נפתח בכותרת Jingle Bells מעל שבעה פעמוני קבלה של מלון.</p>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata" poster="Videos/mosquito_story_poster.jpg" width="1080" height="1920" aria-describedby="video2-desc">
+          <source src="Videos/mosquito_story_15s_v5.mp4" type="video/mp4">
+          הדפדפן שלך אינו תומך בניגון וידאו.
+        </video>
+        <p class="video-caption" id="video2-desc">עיריית הרצליה - מייבשים את היתושים: סרטון אנכי (9:16) באורך 15 שניות. הסרטון נפתח בלוגו העירייה, איור יתוש מחייך והכיתוב ״מייבשים את היתושים״.</p>
+      </div>
     </div>
   <div class="arrow-panel bottom">
     <a class="arrow-btn" href="municipalities.html" aria-label="לקטגוריה הקודמת: עיריות"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/><line x1="12" y1="12" x2="5" y2="12"/></svg></a>
