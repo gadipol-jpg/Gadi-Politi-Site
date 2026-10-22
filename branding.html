@@ -31,7 +31,7 @@
     padding:1.6rem clamp(1.2rem,4vw,3.5rem);
   }
   header .logo{flex-shrink:0;}
-  header .logo img{height:67px; width:auto; max-width:none;}
+  header .logo img{height:134px; width:auto; max-width:none;}
 
   nav ul{
     display:flex;
@@ -56,6 +56,10 @@
     header .logo{
       order:1;
       margin-right:auto;
+    }
+    header .logo img{
+      height:auto;
+      width:min(338px, calc(100vw - 3rem));
     }
     header nav{
       order:2;
